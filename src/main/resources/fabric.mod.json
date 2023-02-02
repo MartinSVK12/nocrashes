@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nocrashes",
+  "version": "1.0.0",
+
+  "name": "No Crashes (BTA)",
+  "description": "Better crash handler!",
+  "authors": [
+    "MartinSVK12"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "MIT",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "sunsetsatellite.nocrashes.NoCrashes"
+    ]
+  },
+  "mixins": [
+    "nocrashes.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3"
+  },
+  "suggests": {
+  }
+}
