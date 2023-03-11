@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nocrashes",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "No Crashes (BTA)",
   "description": "Better crash handler!",
@@ -26,7 +26,8 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.13.3"
+    "fabricloader": ">=0.13.3",
+    "minecraft": "1.7.7"
   },
   "suggests": {
   }
