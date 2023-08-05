@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nocrashes",
+  "version": "1.0.3",
+
+  "name": "NoCrashes",
+  "description": "Better crash handler!",
+  "authors": [
+    "MartinSVK12"
+  ],
+  "contact": {
+    "homepage": "https://github.com/MartinSVK12/nocrashes",
+    "sources": "https://github.com/MartinSVK12/nocrashes"
+  },
+
+  "license": "MIT",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "sunsetsatellite.nocrashes.NoCrashes"
+    ]
+  },
+  "mixins": [
+    "nocrashes.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3"
+  },
+  "suggests": {
+  }
+}
