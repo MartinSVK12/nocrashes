@@ -111,9 +111,9 @@ public abstract class MinecraftMixin {
                     }
 
                     if (this.isGamePaused && this.theWorld != null) {
-                        float temp = this.timer.alpha;
+                        float temp = this.timer.partialTicks;
                         this.timer.advanceTime();
-                        this.timer.alpha = temp;
+                        this.timer.partialTicks = temp;
                     } else {
                         this.timer.advanceTime();
                     }
@@ -139,7 +139,7 @@ public abstract class MinecraftMixin {
                     long frameTime = System.nanoTime() - nanoTime;
                     OpenGLHelper.checkError("pre render");
                     RenderBlocks.fancyGrass = this.gameSettings.fancyGraphics.value == 1;
-                    this.sndManager.updateListenerPosition(this.thePlayer, this.timer.alpha);
+                    this.sndManager.updateListenerPosition(this.thePlayer, this.timer.partialTicks);
                     GL11.glEnable(3553);
                     if (this.theWorld != null) {
                         this.theWorld.updatingLighting();
@@ -150,14 +150,14 @@ public abstract class MinecraftMixin {
                         this.gameSettings.thirdPersonView.value = 0;
                     }
 
-                    this.render.beginRenderGame();
+                    this.render.beginRenderGame(this.timer.partialTicks);
                     GL11.glEnable(3008);
                     if (!this.skipRenderWorld) {
                         if (this.playerController != null) {
-                            this.playerController.setPartialTime(this.timer.alpha);
+                            this.playerController.setPartialTime(this.timer.partialTicks);
                         }
 
-                        this.worldRenderer.updateCameraAndRender(this.timer.alpha);
+                        this.worldRenderer.updateCameraAndRender(this.timer.partialTicks);
                     }
 
                     if (this.gameSettings.pauseOnLostFocus.value) {
@@ -178,7 +178,7 @@ public abstract class MinecraftMixin {
                     }
 
                     this.guiAchievement.updateAchievementWindow();
-                    this.render.endRenderGame();
+                    this.render.endRenderGame(this.timer.partialTicks);
                     Thread.yield();
                     this.screenshotListener();
                     if (Display.wasResized()) {

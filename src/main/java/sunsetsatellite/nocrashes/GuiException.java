@@ -33,7 +33,7 @@ public class GuiException extends GuiScreen {
         this.drawStringCentered(this.fontRenderer, e.toString(), this.width / 2, this.height / 4 - 60 + 60 + 27, 0xFFFFFF00);
         this.drawStringCentered(this.fontRenderer, 	"   at "+e.getStackTrace()[0].toString(), this.width /2, this.height / 4 - 60 + 60 + 35, 0xFFFFFF00);
         this.drawString(this.fontRenderer, "To prevent more problems, the current game has quit.", this.width / 2 - 140, this.height / 4 - 60 + 60 + 60, 10526880);
-        this.drawString(this.fontRenderer, "NoCrashes (BTA) v1.0.3 by MartinSVK12",2,this.height - 12,10526880);
+        this.drawString(this.fontRenderer, "NoCrashes (BTA) v1.0.4 by MartinSVK12",2,this.height - 12,10526880);
         super.drawScreen(i1, i2, f3);
     }
 }
